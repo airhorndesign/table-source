@@ -1,0 +1,541 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Table Source</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
+<script src="js/equipment.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="styles/jmobilestyles.css"/>
+<link rel="stylesheet" href="themes/equipment.min.css" />
+<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+</head>
+<body>
+
+<div data-role="page" id="home" data-position="fixed" data-theme="a">
+	<div data-role="header">
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div> <!--end of header-->
+    <div data-role="content">
+    	<div class="ui-grid-c">
+        	<div class="ui-block-a">
+            	<a href="#turntables" data-role="button" class="home-button" data-transition="slide"><h1 class="home-title">Turntables</h1><img class="align-left-images" src="images/turntable-icon.png" /></a>
+            </div>
+            <div class="ui-block-b">
+            	<a href="#mixers" data-role="button" class="home-button" data-transition="slide"><h1 class="home-title">Mixers</h1><img class="align-left-images" src="images/mixer-icon.png"/></a>
+            </div>
+            <div class="ui-block-c">
+            	<a href="#headphones" data-role="button" class="home-button" data-transition="slide"><h1 class="home-title">Headphones</h1><img class="align-left-images" src="images/headphones-icon.png"/></a>
+            </div>
+            <div class="ui-block-c">
+            	<a href="#catridges" data-role="button" class="home-button" data-transition="slide"><h1 class="home-title">Catridges</h1><img class="align-left-images" src="images/catridges-icon.png"/></a>
+            </div>
+        </div>
+        
+        <ul id="equiplist" class="align-top-list hidden" data-role="listview" data-inset="true"> 
+        	<li><a href="#turntables" data-icon="arrow-r" data-transition="slide"><h1>Turntables</h1><img class="align-left-images" src="images/turntable-icon.png" /><p>Audio-Technica, Numark, and Technics</p></a></li>
+            <li><a href="#mixers" data-icon="arrow-r" data-transition="slide"><h1>Mixers</h1><img class="align-left-images" src="images/mixer-icon.png"/><p>Ecler, Pioneer, and Rane</p></a></li>
+            <li><a href="#headphones" data-icon="arrow-r" data-transition="slide"><h1>Headphones</h1><img class="align-left-images" src="images/headphones-icon.png"/><p>AIAIAI, Grado, and Urbanears</p></a></li>
+            <li><a href="#catridges" data-icon="arrow-r" data-transition="slide"><h1>Catridges</h1><img class="align-left-images" src="images/catridges-icon.png"/><p>Ortofon, Shure, and Stanton</p></a></li>
+        </ul>
+    </div><!--end of content-->
+    <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+</div><!-- end of home page -->
+
+<div data-role="page" id="info" data-theme="a">
+	<div data-role="header">
+    	<h1 class="align-left-info"><img src="images/logo.png"/></h1>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<p>The Table Source is the one stop shop for all your DJ needs! Whether its turntables, mixers, headphones, or catridges, we provide all the brand names at competitive prices. </p>
+        <a href="#" data-role="button" data-rel="back" data-transition="fade">Back</a>
+    </div> <!-- end of content -->
+
+</div> <!-- end of info page -->
+
+<div data-role="page" id="turntables" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#home" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span>Turntables
+        </h2>
+       <ul id="equiplist" class="align-top-list" data-role="listview" data-inset="true"> 
+        	<li><a href="#a-t" onClick="getList('Audio-Technica');" data-icon="arrow-r" data-transition="slide"><h1>Audio-Technica</h1><img class="align-top-logos-at" src="images/audio-technica_logo.png" /><p>see models...</p></a></li>
+            <li><a href="#numark" onClick="getList('Numark');" data-icon="arrow-r" data-transition="slide"><h1>Numark</h1><img class="align-top-logos" src="images/numark.png"/><p>see models...</p></a></li>
+            <li><a href="#technics" onClick="getList('Technics');" data-icon="arrow-r" data-transition="slide"><h1>Technics</h1><img class="align-top-logos" src="images/Technics.png"/><p>see models...</p></a></li>
+        </ul>
+    </div><!-- end of content -->
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of turntables page -->
+
+<div data-role="page" id="mixers" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#home" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span>Mixers
+        </h2>
+       <ul id="equiplist" class="align-top-list" data-role="listview" data-inset="true"> 
+        	<li><a href="#ecler" onClick="getList('Ecler');" data-icon="arrow-r" data-transition="slide"><h1>Ecler</h1><img class="align-top-logos" src="images/ecler.png" /><p>see models...</p></a></li>
+            <li><a href="#pioneer" onClick="getList('Pioneer');" data-icon="arrow-r" data-transition="slide"><h1>Pioneer</h1><img class="align-top-logos" src="images/pioneer.png"/><p>see models...</p></a></li>
+            <li><a href="#rane" onClick="getList('Rane');" data-icon="arrow-r" data-transition="slide"><h1>Rane</h1><img class="align-top-logos" src="images/Rane-logo.png"/><p>see models...</p></a></li>
+        </ul>
+    </div><!-- end of content -->
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of mixers page -->
+
+<div data-role="page" id="headphones" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#home" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span>Headphones
+        </h2>
+       <ul id="equiplist" class="align-top-list" data-role="listview" data-inset="true"> 
+        	<li><a href="#aiaiai" onClick="getList('AIAIAI');" data-icon="arrow-r" data-transition="slide"><h1>AIAIAI</h1><img class="align-top-logos" src="images/aiaiai.png" /><p>see models...</p></a></li>
+            <li><a href="#grado" onClick="getList('Grado');" data-icon="arrow-r" data-transition="slide"><h1>Grado</h1><img class="align-top-logos" src="images/grado.png"/><p>see models...</p></a></li>
+            <li><a href="#urbanears" onClick="getList('Urbanears');" data-icon="arrow-r" data-transition="slide"><h1>Urbanears</h1><img class="align-top-logos" src="images/urbanears.png"/><p>see models...</p></a></li>
+        </ul>
+    </div><!-- end of content -->
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of headphones page -->
+
+
+<div data-role="page" id="catridges" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#home" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span>Catridges
+        </h2>
+       <ul id="equiplist" class="align-top-list" data-role="listview" data-inset="true"> 
+        	<li><a href="#ortofon" onClick="getList('Ortofon');" data-icon="arrow-r" data-transition="slide"><h1>Ortofon</h1><img class="align-top-logos" src="images/ortofon.png" /><p>see models...</p></a></li>
+            <li><a href="#shure" onClick="getList('Shure');" data-icon="arrow-r" data-transition="slide"><h1>Shure</h1><img class="align-top-logos" src="images/shure.png"/><p>see models...</p></a></li>
+            <li><a href="#stanton" onClick="getList('Stanton');" data-icon="arrow-r" data-transition="slide"><h1>Stanton</h1><img class="align-top-logos" src="images/stanton.png"/><p>see models...</p></a></li>
+        </ul>
+    </div><!-- end of content -->
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of catridges page -->
+
+<div data-role="page" id="a-t" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#turntables" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#turntables" data-transition="fade">Turntables</a> <span class="blue">+ </span>Audio-Technica
+        </h2>
+        
+        <div id="Audio-Technica-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of a-t page -->
+
+<div data-role="page" id="numark" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#turntables" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#turntables" data-transition="fade">Turntables</a> <span class="blue">+ </span>Numark
+        </h2>
+        
+        <div id="Numark-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of numark page -->
+
+<div data-role="page" id="technics" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#turntables" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#turntables" data-transition="fade">Turntables</a> <span class="blue">+ </span>Technics
+        </h2>
+        
+        <div id="Technics-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of technics page -->
+
+<div data-role="page" id="ecler" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#mixers" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#mixers" data-transition="fade">Mixers</a> <span class="blue">+ </span>Ecler
+        </h2>
+        
+        <div id="Ecler-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of ecler page -->
+
+<div data-role="page" id="pioneer" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#mixers" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#mixers" data-transition="fade">Mixers</a> <span class="blue">+ </span>Pioneer
+        </h2>
+        
+        <div id="Pioneer-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of pioneer mixers page -->
+
+<div data-role="page" id="rane" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#mixers" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#mixers" data-transition="fade">Mixers</a> <span class="blue">+ </span>Rane
+        </h2>
+        
+        <div id="Rane-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of rane page -->
+
+<div data-role="page" id="aiaiai" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#headphones" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#headphones" data-transition="fade">Headphones</a> <span class="blue">+ </span>AIAIAI
+        </h2>
+        
+        <div id="AIAIAI-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of AIAIAI page -->
+
+<div data-role="page" id="grado" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#headphones" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#headphones" data-transition="fade">Headphones</a> <span class="blue">+ </span>Grado
+        </h2>
+        
+        <div id="Grado-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of grado page -->
+
+<div data-role="page" id="urbanears" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#headphones" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#headphones" data-transition="fade">Headphones</a> <span class="blue">+ </span>Urbanears
+        </h2>
+        
+        <div id="Urbanears-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of pioneer headphones page -->
+
+<div data-role="page" id="ortofon" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#catridges" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#catridges" data-transition="fade">Catridges</a> <span class="blue">+ </span>Ortofon
+        </h2>
+        
+        <div id="Ortofon-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of ortofon page -->
+
+<div data-role="page" id="shure" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#catridges" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#catridges" data-transition="fade">Catridges</a> <span class="blue">+ </span>Shure
+        </h2>
+        
+        <div id="Shure-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of shure page -->
+
+<div data-role="page" id="stanton" data-position="fixed" data-theme="a">
+	<div data-role="header">
+        <a href="#catridges" data-role="button" class="ui-btn-left align-top-back" data-icon="back" data-transition="fade">Back</a>
+    	<h1 class="align-left"><img src="images/logo.png"/></h1>
+        <a href="#info" data-icon="info" class="ui-btn-right align-top" data-rel="dialog" data-transition="flip"> Info</a>
+    </div><!-- end of header-->
+    <div data-role="content">
+    	<h2>
+        	<span class="blue">+ </span><a href="#catridges" data-transition="fade">Catridges</a> <span class="blue">+ </span>Stanton
+        </h2>
+        
+        <div id="Stanton-list" class="refresh" data-role="collapsible-set">
+        	
+       	</div>
+        <div data-role="footer" data-position="fixed">
+    	<nav data-role="navbar">
+        	<ul>
+            	<li>
+                	<a href="#home" data-icon="home" data-transition="fade">
+                    	Home
+                    </a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </div><!-- end of footer tag -->
+    </div><!-- end of content -->
+</div><!-- end of stanton page -->
+
+</body>
+</html>
